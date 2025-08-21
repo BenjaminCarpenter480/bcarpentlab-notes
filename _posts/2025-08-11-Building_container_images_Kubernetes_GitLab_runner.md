@@ -1,6 +1,6 @@
 ---
 title: Building Container Images in Kubernetes with GitLab CI/CD
-date: 2025-08-11 08:00:00        
+date: 2025-08-11 08:00:00 +0000
 #categories: [TOP_CATEGORY, SUB_CATEGORY]
 tags: [kubernetes, ci/cd, containers, registry]     # TAG names should always be lowercase
 ---
@@ -12,7 +12,7 @@ Whether you're a DevOps engineer, a platform developer, or just curious about co
 
 ## BuildKit vs BuildAh vs Docker Build - A Comparative Analysis
 
-After some research and testing, I found BuildKit to be the preferred choice for most CI/CD environments. It offers better feature support (caching, parallelism), can be run securely in rootless mode, and has a simpler setup that leads to better adoption.
+After some research and testin, I found BuildKit to be the preferred choice for most CI/CD environments. It offers better feature support (caching, parallelism), can be run securely in rootless mode, and has a simpler setup that leads to better adoption.
 
 ### Docker Build
 

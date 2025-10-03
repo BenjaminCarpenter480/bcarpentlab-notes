@@ -4,7 +4,6 @@ date: 2025-08-11 08:00:00 +0000
 #categories: [TOP_CATEGORY, SUB_CATEGORY]
 tags: [kubernetes, ci/cd, containers, registry]     # TAG names should always be lowercase
 ---
-# Building Container Images in Kubernetes with GitLab CI/CD
 
 Container images have become the standard way to package and distribute applications in cloud environments. When setting up a CI/CD pipeline for containerized applications, one critical decision is choosing the right tool for building these images. This article explores different container image building tools, compares their features, and provides a step-by-step guide to set up a secure image building environment using Kubernetes and GitLab CI/CD.
 

@@ -5,8 +5,6 @@ date: 2025-10-03 19:00:00 +0000
 tags: [gnome, gnome-remote-desktop, rdp, xrdp, remote-access, headless]     # TAG names should always be lowercase
 ---
 
-# How to use Gnome Remote Desktop for Headless login
-
 If you just want to plug a machine into power and network and then create a Remote Desktop Protocol connection (RDP) to it without a monitor attached, GNOME's built‑in Remote Desktop can do that. GNOME Remote Desktop (GRD) is emerging as a native solution, moving beyond external tools like XRDP. My exploration into GRD below focused on its potential as a built-in RDP solution. This guide walks you through setting it up from the command line for remote login, focusing on the user experience and key considerations.
 
 ## What you'll get

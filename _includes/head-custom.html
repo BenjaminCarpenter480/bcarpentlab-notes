@@ -1,0 +1,33 @@
+{%- comment -%} Custom head additions: favicon links and manifest. This file is
+intentionally small and uses `relative_url` so it works with `baseurl`. Many
+Jekyll themes (including Chirpy) include or allow a `head-custom.html` include.
+If the theme does not automatically include this, we can instead override the
+full head include. {%- endcomment -%}
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="{{ '/assets/img/favicons/favicon.png' | relative_url }}"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="{{ '/assets/img/favicons/favicon-32x32.png' | relative_url }}"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="{{ '/assets/img/favicons/favicon-16x16.png' | relative_url }}"
+/>
+<link
+  rel="shortcut icon"
+  href="{{ '/assets/img/favicons/favicon.ico' | relative_url }}"
+/>
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta
+  name="msapplication-TileImage"
+  content="{{ '/assets/img/favicons/favicon-96x96.png' | relative_url }}"
+/>

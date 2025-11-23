@@ -2,6 +2,7 @@
 
 - type: github
   icon: "fab fa-github"
+  url: "https://github.com/BenjaminCarpenter480"
 
 # - type: twitter
 #   icon: "fa-brands fa-x-twitter"
@@ -21,11 +22,11 @@
 #
 - type: linkedin
   icon: "fab fa-linkedin" # icons powered by <https://fontawesome.com/>
-  url: "" # Fill with your Linkedin homepage
+  url: "www.linkedin.com/in/benjamincarpenter480" # Fill with your Linkedin homepage
 
 - type: stack-overflow
   icon: "fab fa-stack-overflow"
-  url: "" # Fill with your stackoverflow homepage
+  url: "https://stackoverflow.com/users/7052741/benjamin-carpenter" # Fill with your stackoverflow homepage
 #
 # - type: bluesky
 #   icon: 'fa-brands fa-bluesky'

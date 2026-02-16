@@ -1,6 +1,7 @@
 ---
 title: Building Container Images in Kubernetes with GitLab CI/CD
 date: 2025-08-11 08:00:00 +0000
+updated: 2026-02-16 20:00:00 +0000
 #categories: [TOP_CATEGORY, SUB_CATEGORY]
 tags: [kubernetes, ci/cd, containers, registry]     # TAG names should always be lowercase
 ---
@@ -115,6 +116,9 @@ We'll use the official Helm chart to deploy a GitLab Runner with Kubernetes exec
             privileged = false
     ```
 
+>[!NOTE]
+> If you are using an Ubuntu/Debian-based system you may need to adjust apparmor settings to allow the runner to run in unprivileged mode. Details of this (and other potential troubleshooting tips) can be found in the [GitLab Runner Kubernetes Executor documentation](https://docs.gitlab.com/ci/docker/using_buildkit/#rootless-build-fails-with-permission-errors).
+
 4. Deploy the runner:
 
     ```bash
@@ -135,6 +139,7 @@ By following the steps in this guide, you can create a secure, efficient contain
 
 ### References and Further Reading
 
+- [Build Docker images with BuildKit](https://docs.gitlab.com/ci/docker/using_buildkit)
 - [GitLab Documentation on Docker Build](https://docs.gitlab.com/ci/docker/using_docker_build/#use-docker-in-docker)
 - [StackOverflow Discussion on BuildKit Security](https://stackoverflow.com/a/68395788/7052741)
 - [Docker Documentation on Build Cache](https://docs.docker.com/build/cache/#use-the-dedicated-run-cache)

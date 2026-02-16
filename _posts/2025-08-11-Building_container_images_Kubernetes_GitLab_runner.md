@@ -60,23 +60,23 @@ We'll use KinD (Kubernetes in Docker) to create a local cluster for testing:
 
 1. Create a new cluster:
 
-```bash
-kind create cluster --name gitlab-learn
-```
+  ```bash
+  kind create cluster --name gitlab-learn
+  ```
 
 2. Verify it's running:
 
-```bash
-kubectl get nodes
-```
+  ```bash
+  kubectl get nodes
+  ```
 
-When you're done testing, you can clean up with:
+  When you're done testing, you can clean up with:
 
-```bash
-kind cluster delete gitlab-learn
-```
+  ```bash
+  kind cluster delete gitlab-learn
+  ```
 
-> [!WARNING]
+>[!WARNING]
 > If you're using an Apple M-chip laptop or a Raspberry pi, you'll need additional configuration as there's currently no Arm architecture GitLab runner helper code available. I just used a different laptop cause I'm lazy and lucky to have another about!
 
 ### Deploying a Secure GitLab Runner with BuildKit
@@ -85,41 +85,41 @@ We'll use the official Helm chart to deploy a GitLab Runner with Kubernetes exec
 
 1. Create a namespace for the runner:
 
-```bash
-kubectl create namespace gitlab-buildkit-runner
-```
+    ```bash
+    kubectl create namespace gitlab-buildkit-runner
+    ```
 
 2. Add the GitLab Helm repository:
 
-```bash
-helm repo add gitlab https://charts.gitlab.io && helm repo update
-```
+    ```bash
+    helm repo add gitlab https://charts.gitlab.io && helm repo update
+    ```
 
 3. Create a configuration file for the runner (save as `gitlab-buildkit-runner-values.yml`):
 
-```yaml
-gitlabUrl: "https://gitlab.example.com"  # Replace with your GitLab instance URL
-runnerRegistrationToken: "<RUNNER_TOKEN>"  # Replace with your actual runner token
+    ```yaml
+    gitlabUrl: "https://gitlab.example.com"  # Replace with your GitLab instance URL
+    runnerRegistrationToken: "<RUNNER_TOKEN>"  # Replace with your actual runner token
 
-rbac:
-  create: true
+    rbac:
+      create: true
 
-runners:
-  config: |
-    [[runners]]
-      name = "k8s-buildkit-runner"
-      executor = "kubernetes"
-      [runners.kubernetes]
-        namespace = "gitlab-buildkit-runner"
-        image = "moby/buildkit:rootless"
-        privileged = false
-```
+    runners:
+      config: |
+        [[runners]]
+          name = "k8s-buildkit-runner"
+          executor = "kubernetes"
+          [runners.kubernetes]
+            namespace = "gitlab-buildkit-runner"
+            image = "moby/buildkit:rootless"
+            privileged = false
+    ```
 
 4. Deploy the runner:
 
-```bash
-helm install --namespace gitlab-buildkit-runner gitlab-buildkit-runner -f gitlab-buildkit-runner-values.yml gitlab/gitlab-runner
-```
+    ```bash
+    helm install --namespace gitlab-buildkit-runner gitlab-buildkit-runner -f gitlab-buildkit-runner-values.yml gitlab/gitlab-runner
+    ```
 
 ### Example Implementation
 
